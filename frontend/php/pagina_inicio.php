@@ -31,7 +31,7 @@ if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
     <h1 class="w3-xxlarge w3-animate-top w3-text-white w3-center">SADS</h1>
     <p class="w3-large w3-center">Sistema de Adquisición de Datos de Soldadura</p>
    
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:300px">
 
       <form class="w3-container" action="usuario_log.php" method="post">
         <div class="w3-section">
@@ -44,9 +44,6 @@ if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
       </form>
 
       <div class="w3-container w3-border-top w3-light-grey">
-        <!--
-        <span class="w3-left w3-padding w3-hide-small"><?php echo $_SESSION['S_usuario']; ?></span>
-        -->
         <span class="w3-left w3-padding w3-hide-small"><button onclick="window.location.href='busqueda_tubo.php'">REPORTES</button></span>
         <span class="w3-right w3-padding w3-hide-small"><button onclick="document.getElementById('id01').style.display='block'">¿Olvidaste tu contraseña?</button></span>
       </div>
@@ -55,10 +52,12 @@ if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
     
   </div>
 </div>
+
   <!-- Footer -->
   <footer class="w3-display-bottomleft w3-padding-large">
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
   </footer>
+
   <!--ventana modal de contarseña-->
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
