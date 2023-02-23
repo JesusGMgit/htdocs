@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<title>SADS TUBACERO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/pagina_principal.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <img src="img/fenix.ico" style="width:10%; vertical-align: middle;">
+  </div>
+
+  <div class="w3-display-middle">
+    <p class="w3-center"><img src="img/logo-1.png" class="w3-animate-top"></p>
+    <h1 class="w3-jumbo w3-animate-top w3-text-white w3-center">SADS</h1>
+    <p class="w3-large w3-center">Sistema de Adquisición de Datos de Soldadura</p>
+    <p class="w3-center"><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">ENTRAR</button></p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">PRUEBAS</p>
+    
+    <!--
+      <p class="w3-center"><button onclick="window.location.href='app_operador/publish.htm'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">APP OPERADOR</button></p>
+      <p class="w3-center"><button onclick="window.location.href='php/ADMIN.php'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">Abrir pruebas</button></p>
+      <p class="w3-center"><button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">Proyecto</button></p>
+      <p class="w3-center"><button onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">Operadores</button></p>
+      <p class="w3-center"><button onclick="document.getElementById('id04').style.display='block'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">Interna</button></p>
+      <p class="w3-center"><button onclick="document.getElementById('id05').style.display='block'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">Externa</button></p>
+      <p class="w3-center"><button onclick="document.getElementById('id06').style.display='block'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">Usuarios</button></p>
+      <p  class="w3-large w3-center"><a href="/reporte_avanzes_SADS/Reporte de avance de sistema de adquisición de datos de soldadura.docx">Descargar reporte</a></p>
+      <p class="w3-center"><button onclick="window.location.href='php/usuarios_busqueda.php'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">Busqueda</button></p>
+      <p class="w3-center"><button onclick="document.getElementById('id07').style.display='block'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">solicitar P</button></p> 
+      <p class="w3-center"><button onclick="document.getElementById('id08').style.display='block'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">solicitar F</button></p> 
+      <p class="w3-center"><button onclick="document.getElementById('id09').style.display='block'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">Actualizar</button></p> 
+      <p class="w3-center"><button onclick="window.location.href='codesys/4096_10CD 0204_1.0.4.0.zip'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">CODESYS INTERNA</button></p>
+      <p class="w3-center"><button onclick="window.location.href='php/usuarios_tablas.php'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">Abrir usuarios</button></p>
+      <p class="w3-center"><button onclick="window.location.href='codesys/4096_10CD 0204_1.0.4.0.zip'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">CODESYS INTERNA</button></p>
+    -->
+    
+    <p class="w3-center"><button onclick="window.location.href='app_operador/publish.htm'" class="w3-button w3-round-xlarge w3-cyan w3-xlarge w3-center">APP OPERADOR</button></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-display-bottomleft w3-padding-large">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </footer>
+
+  <!--formulario para acceso a Usuarios-->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+  
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+        <img src="img/obrero2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+      </div>
+
+      <form class="w3-container" action="/php/usuario_log.php" method="post">
+        <div class="w3-section">
+          <label><b>Usuario</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Ingresa tu Usuario" name="usuario" required>
+          <label><b>Contraseña</b></label>
+          <input class="w3-input w3-border" type="password" placeholder="Ingresa tu contraseña" name="contra" required>
+          <button class="w3-button w3-block  w3-green w3-section w3-padding" type="submit">Acceder</button>
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
+        <span class="w3-right w3-padding w3-hide-small">¿Olvidaste tu <a href="#">contraseña?</a></span>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+</div>
+</body>
+</html>

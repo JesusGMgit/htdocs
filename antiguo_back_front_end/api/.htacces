@@ -1,0 +1,3 @@
+RewriteEngine On # Turn on the rewriting engine
+RewriteRule ^Rq_operadores/?$ Rq_operadores.php [NC,L]
+RewriteRule ^Rq_operadores/([0-9]+)/?$ Rq_operadores.php?id=$1 [NC,L]

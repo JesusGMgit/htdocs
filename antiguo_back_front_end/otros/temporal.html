@@ -1,0 +1,242 @@
+<!--!este formulario no sera usado en la pagina ya-->
+  <!--formulario para llenar datos de tabla de Proyectos-->
+  <div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+  
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+        <img src="img/obrero2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+      </div>
+
+      <form class="w3-container" action="/api/rq_tProyectos.php" method="post" target="R1_iframe">
+        <div class="w3-section">
+          <label><b>Nombre del proyecto</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Nombre Proyecto" name=" pro_nombre" required>
+          <label><b>Diametro de tuberia</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Medida de diametro" name="pro_diametro" required>
+          <label><b>Espesor de placa</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Medida del espesor" name="pro_espesor" required>
+          <label><b>Tipo de alambre a utilizar</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Tipo de alambre" name="pro_alambre" required>
+          <label><b>Tipo de fundente a ultilizar</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Tipo de fundente" name="pro_fundente" required>
+          <button class="w3-button w3-block  w3-green w3-section w3-padding" type="submit">Guardar</button>
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
+      </div>
+      <iframe name="R1_iframe" width="100%" height="300" class="w3-container w3-blue"  title="Iframe Example"></iframe> 
+    </div>
+  </div>
+
+  <!--formulario para llenar datos de tabla de soldadura interna-->
+  <div id="id04" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+  
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+        <img src="img/obrero2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+      </div>
+
+      <form class="w3-container" action="/api/rq_tTuberiaInterna.php" method="post" target="R1_iframe">
+        <div class="w3-section">
+          <label><b>ID del tubo</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="no_tubo+no_placa" name="T_id_tubo" required>  
+          <label><b>Numero del tubo</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="#Tubo" name="T_no_tubo" required>  
+          <label><b>Numero de la placa</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="#Placa" name="T_no_placa" required>  
+          <label><b>Lote del alambre</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Lote del alambre" name="T_lote_alambre" required>  
+          <label><b>Lote del fundente</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Lote del fundente" name="T_lote_fundente" required>  
+          <label><b>Maquina utilizada</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Externa/interna" name="T_maquina" required>  
+          <label><b>Fecha de soldadura</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="dd/MM/yyyy" name="T_fecha" required>  
+          <label><b>Hora de la soldadura</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="hh:mm:ss am/pm" name="T_hora" required>  
+          <label><b>Archivos excel de datos</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="nombre.xls" name="Archivos excel" required>  
+          <button class="w3-button w3-block  w3-green w3-section w3-padding" type="submit">Guardar</button>
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id04').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
+      </div>
+      <iframe name="R1_iframe" width="100%" height="300" class="w3-container w3-blue"  title="Iframe Example"></iframe> 
+    </div>
+  </div>
+  
+ <!--formulario para llenar datos de tabla de soldadura externa-->
+ <div id="id05" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+    <div class="w3-center"><br>
+      <span onclick="document.getElementById('id05').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+      <img src="img/obrero2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+    </div>
+
+    <form class="w3-container" action="/api/rq_tTuberiaExterna.php" method="post" target="R1_iframe">
+      <div class="w3-section">
+        <label><b>ID del tubo</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="no_tubo+no_placa" name="T_id_tubo" required>  
+        <label><b>Numero del tubo</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="#Tubo" name="T_no_tubo" required>  
+        <label><b>Numero de la placa</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="#Placa" name="T_no_placa" required>  
+        <label><b>Lote del alambre</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Lote del alambre" name="T_lote_alambre" required>  
+        <label><b>Lote del fundente</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Lote del fundente" name="T_lote_fundente" required>  
+        <label><b>Maquina utilizada</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Externa/interna" name="T_maquina" required>  
+        <label><b>Fecha de soldadura</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="dd/MM/yyyy" name="T_fecha" required>  
+        <label><b>Hora de la soldadura</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="hh:mm:ss am/pm" name="T_hora" required>  
+        <label><b>Archivos excel de datos</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="nombre.xls" name="Archivos excel" required>  
+        <button class="w3-button w3-block  w3-green w3-section w3-padding" type="submit">Guardar</button>
+      </div>
+    </form>
+
+    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+      <button onclick="document.getElementById('id05').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
+    </div>
+    <iframe name="R1_iframe" width="100%" height="300" class="w3-container w3-blue"  title="Iframe Example"></iframe> 
+  </div>
+</div>
+
+ <!--formulario para llenar datos de tabla de Usuarios-->
+ <div id="id06" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+    <div class="w3-center"><br>
+      <span onclick="document.getElementById('id06').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+      <img src="img/obrero2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+    </div>
+
+    <form class="w3-container" action="/api/rq_tUsuarios.php" method="post" target="R1_iframe">
+      <div class="w3-section">
+        <label><b>Nombre usuario</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Usuario" name="us_usuario" required>
+        <label><b>Contraseña</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Contraseña" name="us_contraseña" required>
+        <label><b>Descripcion</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="descripcion del usuario" name="us_descripcion" required>
+        <button class="w3-button w3-block  w3-green w3-section w3-padding" type="submit">Guardar</button>
+      </div>
+    </form>
+
+    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+      <button onclick="document.getElementById('id06').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
+    </div>
+    <iframe name="R1_iframe" width="100%" height="300" class="w3-container w3-blue"  title="Iframe Example"></iframe> 
+  </div>
+</div>
+
+  <!--formulario para so9licitar datos de proyecto-->
+  <div id="id07" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+  
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id07').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+        <img src="img/obrero2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+      </div>
+  
+      <form class="w3-container" action="/api/rq_tTuberiaExterna.php" method="get" target="R1_iframe">
+        <div class="w3-section">
+          <label><b>Proyecto</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="nombre poryecto" name="proyecto" required>
+          <label><b>Maquina</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="nombre maquina" name="maquina">
+          <button class="w3-button w3-block  w3-green w3-section w3-padding" type="submit">Solicitar</button>
+        </div>
+      </form>
+  
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id07').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
+      </div>
+      <iframe name="R1_iframe" width="100%" height="300" class="w3-container w3-blue"  title="Iframe Example"></iframe> 
+    </div>
+  </div>
+
+  <!--formulario para solicitar datos por  fecha-->
+  <div id="id08" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+  
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id08').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+        <img src="img/obrero2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+      </div>
+  
+      <form class="w3-container" action="/api/rq_tTuberiaExterna.php" method="get" target="R1_iframe">
+        <div class="w3-section">
+          <label><b>fecha</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="fecha de soldadura" name="fecha" required>
+          <button class="w3-button w3-block  w3-green w3-section w3-padding" type="submit">Solicitar</button>
+        </div>
+      </form>
+  
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id08').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
+      </div>
+      <iframe name="R1_iframe" width="100%" height="300" class="w3-container w3-blue"  title="Iframe Example"></iframe> 
+    </div>
+  </div>
+
+   <!--formulario para actualizar los archivos excel-->
+ <div id="id09" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+    <div class="w3-center"><br>
+      <span onclick="document.getElementById('id09').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+      <img src="img/obrero2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+    </div>
+
+    <form class="w3-container" action="/api/rq_tTuberiaInterna.php" method="post" target="R1_iframe">
+      <div class="w3-section">
+        <label><b>No. Tubo</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="No tubo" name="A_no_tubo" required>
+        <label><b>archivo excel</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="nombres de archivo" name="Archivos_excel" required>
+        <button class="w3-button w3-block  w3-green w3-section w3-padding" type="submit">Actualizar</button>
+      </div>
+    </form>
+
+    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+      <button onclick="document.getElementById('id09').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
+    </div>
+    <iframe name="R1_iframe" width="100%" height="300" class="w3-container w3-blue"  title="Iframe Example"></iframe> 
+  </div>
+
+   <!--formulario para actualizar los archivos excel-->
+   <div id="id10" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+    
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id09').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+        <img src="img/obrero2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+      </div>
+    
+      <form class="w3-container" action="/api/rq_tTuberiaExterna.php" method="post" target="R1_iframe">
+        <div class="w3-section">
+          <label><b>ID Tubo</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="ID tubo" name="A_ID_tubo" required>
+          <label><b>archivo excel</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="nombres de archivo" name="Archivos_excel" required>
+          <button class="w3-button w3-block  w3-green w3-section w3-padding" type="submit">Actualizar</button>
+        </div>
+      </form>
+    
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id09').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
+      </div>
+      <iframe name="R1_iframe" width="100%" height="300" class="w3-container w3-blue"  title="Iframe Example"></iframe> 
+    </div>
+
+    
