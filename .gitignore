@@ -1,3 +1,4 @@
+# Other files and folders
 /api
 /app_operador
 /app_servicio
@@ -10,3 +11,10 @@
 /reporte_avanzes_SADS
 /sistema-php
 /antiguo_back_front_end
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+*.application
+*.xlsx
