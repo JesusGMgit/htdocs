@@ -31,21 +31,24 @@ if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
     <h1 class="w3-xxlarge w3-animate-top w3-text-white w3-center">SADS</h1>
     <p class="w3-large w3-center">Sistema de Adquisición de Datos de Soldadura</p>
    
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:300px">
-
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:350px">
+      
       <form class="w3-container" action="usuario_log.php" method="post">
         <div class="w3-section">
           <label><b>Usuario</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Ingresa tu Usuario" name="usuario" required>
           <label><b>Contraseña</b></label>
           <input class="w3-input w3-border" type="password" placeholder="Ingresa tu contraseña" name="contra" required>
-          <button class="w3-button w3-block  w3-blue w3-section w3-padding" type="submit">Acceder</button>
+          <br>
+          <button class="w3-button w3-right w3-blue w3-padding" type="submit">ACCEDER</button>
+          <button class="w3-button w3-left  w3-light-grey w3-padding" type="button">CREAR CUENTA</button>
+          
         </div>
       </form>
-
-      <div class="w3-container w3-border-top w3-light-grey">
-        <span class="w3-left w3-padding w3-hide-small"><button onclick="window.location.href='busqueda_tubo.php'">REPORTES</button></span>
-        <span class="w3-right w3-padding w3-hide-small"><button onclick="document.getElementById('id01').style.display='block'">¿Olvidaste tu contraseña?</button></span>
+      <br>
+      <div class="w3-container w3-padding w3-border-top w3-light-grey">
+        <span class="w3-left w3-hide-small w3-small"><button onclick="window.location.href='busqueda_tubo.php'">REPORTES</button></span>
+        <span class="w3-right w3-hide-small w3-small"><button onclick="document.getElementById('id01').style.display='block'">¿Olvidaste tu contraseña?</button></span>
       </div>
 
     </div>

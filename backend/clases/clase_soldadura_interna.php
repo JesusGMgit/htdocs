@@ -69,6 +69,7 @@ class soldadura_interna{
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
                 $datos_in[]=[
+                    'T_ID_Rtubo'=>$row['Tin_ID_Rtubo'],
                     'T_ID_tubo'=>$row['Tin_ID_tubo'],
                     'T_No_tubo'=>$row['Tin_No_tubo'],
                     'T_No_placa'=>$row['Tin_No_placa'],
