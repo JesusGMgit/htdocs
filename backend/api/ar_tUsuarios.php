@@ -10,7 +10,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo json_encode($_POST);
             
         if($_POST != NULL) {
-            if(Usuario::create_usuario($_POST['Us_Usuario'],$_POST['Us_Nivel'],$_POST['Us_Contra'],$_POST['Us_Descripcion'])){
+            if(Usuario::create_usuario($_POST["Us_Folio"],$_POST['Us_Usuario'],$_POST['Us_Puesto'],$_POST['Us_Contraseña'])){
                     
                 http_response_code(200);
             }//end if
@@ -41,7 +41,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         //echo "get: ". $_GET['Us_ID'];
         //echo json_encode($_PUT);
         if($_PUT != NULL) {
-            if(Usuario::update_usuario($_GET['Us_ID'],$_PUT['Us_Usuario'],$_PUT['Us_Nivel'],$_PUT['Us_Contra'],$_PUT['Us_Descripcion'])) {
+            if(Usuario::update_usuario($_GET['Us_ID'],$_PUT['Us_Usuario'],$_PUT['Us_Nivel'],$_PUT['Us_Contraseña'],$_PUT['Us_Descripcion'])) {
                 http_response_code(200);
             }//end if
             else {

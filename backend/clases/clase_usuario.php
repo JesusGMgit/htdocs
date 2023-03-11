@@ -5,10 +5,10 @@ require_once "../clases/clase_conexion.php";
 class Usuario{
     
 
-    public static function create_usuario($Us_Usuario, $Us_Nivel, $Us_Contra, $Us_Descripcion) {
+    public static function create_usuario($Us_Folio,$Us_Usuario, $Us_Puesto, $Us_Contra) {
         $conexion_db =new Conexion();
-        $query = "INSERT INTO usuarios (Us_Usuario, Us_Nivel, Us_Contra, Us_Descripcion)
-        VALUES ('$Us_Usuario', '$Us_Nivel', '$Us_Contra', '$Us_Descripcion')";
+        $query = "INSERT INTO usuarios (Us_Folio,Us_Usuario, Us_Puesto, Us_Contraseña)
+        VALUES ('$Us_Folio','$Us_Usuario', '$Us_Puesto', '$Us_Contra')";
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
             return TRUE;
@@ -27,7 +27,7 @@ class Usuario{
                     'Us_ID'=>$row['Us_ID'],
                     'Us_Usuario'=>$row['Us_Usuario'],
                     'Us_Nivel'=>$row['Us_Nivel'],
-                    'Us_Contra'=>$row['Us_Contra'],
+                    'Us_Contra'=>$row['Us_Contraseña'],
                     'Us_Descripcion'=>$row['Us_Descripcion'],
                 ];
             }//end while
@@ -46,7 +46,7 @@ class Usuario{
                     'Us_ID'=>$row['Us_ID'],
                     'Us_Usuario'=>$row['Us_Usuario'],
                     'Us_Nivel'=>$row['Us_Nivel'],
-                    'Us_Contra'=>$row['Us_Contra'],
+                    'Us_Contra'=>$row['Us_Contraseña'],
                     'Us_Descripcion'=>$row['Us_Descripcion'],
                 ];
             }//end while
@@ -57,7 +57,7 @@ class Usuario{
     public static function update_usuario($Us_ID,$Us_Usuario, $Us_Nivel, $Us_Contra, $Us_Descripcion) {
         $db = new Conexion();
         $query = "UPDATE usuarios SET 
-                  Us_Usuario='" . $Us_Usuario . "', Us_Contra='" . $Us_Contra . "', Us_Nivel='" . $Us_Nivel . "', Us_Descripcion='" . $Us_Descripcion . 
+                  Us_Usuario='" . $Us_Usuario . "', Us_Contraseña='" . $Us_Contra . "', Us_Nivel='" . $Us_Nivel . "', Us_Descripcion='" . $Us_Descripcion . 
                   "' WHERE Us_ID=" . $Us_ID;
         $db->query($query);
         if($db->affected_rows) {
