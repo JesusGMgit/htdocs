@@ -8,13 +8,13 @@ function descarga_reportes(){
     console.log("No tubo: " + No_tubo);
 
     for(i=1;i<=3;i++){
-        urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_"+i+".php?No_tubo=" + No_tubo;
+        urlf = direccion_pagina + "/backend/api/ar_tTuberiaInterna_"+i+".php?T_No_tubo=" + No_tubo;
         tabla_internas_1(urlf,("INTERNA"+i));   
     }
     console.log("bri: " + busqueda_reporte_internas);
     
     for(i=1;i<=3;i++){
-        urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?No_tubo=" + No_tubo;
+        urlf = direccion_pagina + "/backend/api/ar_tTuberiaExterna_"+i+".php?T_No_tubo=" + No_tubo;
         tabla_externas_1(urlf,("EXTERNA"+i)); 
     }
     console.log("bre: " + busqueda_reporte_externas);
@@ -33,7 +33,7 @@ function tabla_externas_1(urlf,maquina_1){
         const datos11_fetch=(data11)=>{
             maquina=maquina_1;
             try{
-                nom_reporte=data11[0].Tex_Reporte_excel;
+                nom_reporte=data11[0].T_Reporte_excel;
                 
                 if(nom_reporte!="" && busqueda_reporte_externas==0){
                 
@@ -63,8 +63,7 @@ function tabla_internas_1(urlf,maquina_2){
         const datos12_fetch=(data12)=>{
             maquina=maquina_2;
             try{
-                nom_reporte=data12[0].Tin_Reporte_excel;
-                
+                nom_reporte=data12[0].T_Reporte_excel;
                 if(nom_reporte!="" && busqueda_reporte_internas==0){
                     ruta_reporte ="/Reportes/"+maquina+"/"+nom_reporte;
                     var link_reporte=`<a href=${ruta_reporte}>Descargar Reporte : ${nom_reporte} </a>`;

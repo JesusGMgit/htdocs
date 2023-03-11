@@ -91,7 +91,8 @@ class soldadura_externa{
                     'T_Hora'=>$row['Tex_Hora'],
                     'T_Hora_db'=>$row['Tex_Hora_db'],
                     'T_Archivos_excel'=>$row['Tex_Archivos_excel'],
-                    'T_Observaciones'=>$row['Tex_Observaciones']
+                    'T_Observaciones'=>$row['Tex_Observaciones'],
+                    'T_Reporte_excel'=>$row['Tex_Reporte_excel']
                 ];
             }//end while
             return $datos_in;

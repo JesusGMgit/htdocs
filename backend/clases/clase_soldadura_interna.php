@@ -81,7 +81,8 @@ class soldadura_interna{
                     'T_Hora'=>$row['Tin_Hora'],
                     'T_Hora_db'=>$row['Tin_Hora_db'],
                     'T_Archivos_excel'=>$row['Tin_Archivos_excel'],
-                    'T_Observaciones'=>$row['Tin_Observaciones']
+                    'T_Observaciones'=>$row['Tin_Observaciones'],
+                    'T_Reporte_excel'=>$row['Tin_Reporte_excel']
                 ];
             }//end while
             return $datos_in;
