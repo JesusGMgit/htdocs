@@ -78,8 +78,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
     case 'DELETE':
 
-        if(isset($_GET['T_ID_tubo'])){
-            if(soldadura_externa::borrar_tubo_externa("tuberia_soldadura_externa_1",$_GET['T_ID_tubo'])) {
+        if(isset($_GET['T_No_tubo'])){
+            if(soldadura_externa::borrar_tubo_externa("tuberia_soldadura_externa_1",$_GET['T_No_tubo'])) {
                 http_response_code(200);
             }//end if
             else {

@@ -26,7 +26,8 @@ class soldadura_interna{
     }//end 
 
     //Metodos (funciones) por busqueda para de registros
-
+    //funcion que realiza un consulta para obtener todos los resgistros de una tabla
+    //las tablas son de la tuberia que pasa por las maquinas de soldadura interna
     public static function obtener_todos_registros_interna($tuberia_in123){
         $conexion_db =new Conexion();
         $query = "SELECT *FROM ". $tuberia_in123;
@@ -58,8 +59,10 @@ class soldadura_interna{
             
         }//end if
         
-    }//end 
+    }//fin de leer registros de tabla
     
+    //funcion que realiza una consulta de un registro de la tabla
+    //esta consulta se pude de ser apartir del columna o campo con el valor correspondiente buscado
     public static function obtener_registros_interna($tuberia_in123,$T_C_get,$T_D_get) {
         $conexion_db =new Conexion();
         $query = "SELECT *FROM ".  $tuberia_in123." WHERE " . $T_C_get. "=\"" . $T_D_get . "\"";
@@ -87,10 +90,12 @@ class soldadura_interna{
             }//end while
             return $datos_in;
         }//end if
-    }//end read_usuario
+    }//fin de consulta de un registro de tabla
 
 
-    //metodo (funcion) para actulizar datos de registro del tubo 
+    //metodo para actualizar regsitro de tubo
+    //actualiza un registro por medio de una consulta con los datos del campo o culumna 
+    //y el valor corespondiente
     public static function actualizar_tubo_interna($tuberia_in123,$T_Cbusqueda,$T_Dbusqueda,$T_Cactualizar,$T_Dactualizar) {
         $conexion_db = new Conexion(); 
         $query = "UPDATE " .$tuberia_in123. " SET " . $T_Cactualizar . "='" . $T_Dactualizar .
@@ -102,10 +107,11 @@ class soldadura_interna{
         return FALSE;
     }//end update_usuario
 
-    //metodo para borrar registro de tubo
-    public static function borrar_tubo_interna($tuberia_in123,$ID_tubo) {
+    //metodo para borrar un registro de tubo
+    //funcion que borra un registro por medio de una consulta con el dato de ID de tubo
+    public static function borrar_tubo_interna($tuberia_in123,$No_tubo) {
         $conexion_db = new Conexion();
-        $query = "DELETE FROM " . $tuberia_in123 . " WHERE Pro_ID=\"" . $ID_tubo . "\"";
+        $query = "DELETE FROM " . $tuberia_in123 . " WHERE Tin_No_tubo=\"" . $No_tubo . "\"";
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
             return TRUE;
