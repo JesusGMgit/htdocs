@@ -51,9 +51,9 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
         <?php 
             if($_SESSION['S_usuario']=='MTTO'|| $_SESSION['S_nivel']=='ADMIN'){
         ?>
-              <p class="w3-center"><button onclick="window.location.href='../app_operador/publish.htm'" class="w3-large w3-button w3-block  w3-center">APP OPERADOR</button></p>
+              <p class="w3-center"><button onclick="window.location.href='../../app_operador/publish.htm'" class="w3-large w3-button w3-block  w3-center">APP OPERADOR</button></p>
               <p class="w3-center"><button onclick="window.location.href='archivos_mtto.php'" class="w3-large w3-button w3-block  w3-center">ARCHIVOS MTTO</button></p>
-              <p class="w3-center"><button onclick="window.location.href='../pruebas_api.html'" class="w3-large w3-button w3-block  w3-center">PRUEBAS API</button></p>
+              
         <?php 
             }
           }  

@@ -1,3 +1,6 @@
+//funcion para verificar el nivel de usuario quye ingreso a la pagina de tablas de la Base de datos
+//carga tambien la plantilla principal de la tabla con los botones dependiendo del nivel del usuario
+Us_urlf="http://10.10.20.15/backend/api/ar_tUsuarios.php";
 function Cargar_plantilla_usuarios(){
     
     Cabeceras_usuarios();
@@ -10,14 +13,14 @@ function Cargar_plantilla_usuarios(){
         document.getElementById('busqueda_id').innerHTML="";
     }
     
-    urlf ="http://10.10.20.15/api/rq_tUsuarios.php?usuario=";
     
-    fetch(urlf).then(response => response.json())
+    fetch(Us_urlf).then(response => response.json())
             .then(usuarios_data => datos_fetch(usuarios_data))
             .catch(error => console.log(error))
         
         const datos_fetch=(usuarios_data)=>{
             var tabla_a = "";
+           
             for(i=0;i<usuarios_data.length;i++)
                 {
                     if(usuarios_data[i].Us_Usuario!="ADMIN"){
@@ -26,7 +29,7 @@ function Cargar_plantilla_usuarios(){
                                 <td>${usuarios_data[i].Us_ID}</td>
                                 <td>${usuarios_data[i].Us_Usuario}</td>`;
                         if(document.getElementById('usuario_nivel').innerHTML=="ADMIN"){
-                            tabla_a +=`<td>${usuarios_data[i].Us_Contra}</td>
+                            tabla_a +=`<td>${usuarios_data[i].Us_Contraseña}</td>
                                        <td>${usuarios_data[i].Us_Nivel}</td>`
                                 
                         }
@@ -35,9 +38,8 @@ function Cargar_plantilla_usuarios(){
                 
                     }
                     
-
                 }
-            console.log('DESPUES DEL PHP:'+document.getElementById('usuario_nivel').innerHTML);
+            // console.log('DESPUES DEL PHP:'+document.getElementById('usuario_nivel').innerHTML);
             document.getElementById('datos_tabla').innerHTML = "";
             document.getElementById('datos_tabla').innerHTML = tabla_a;
             
@@ -45,6 +47,7 @@ function Cargar_plantilla_usuarios(){
         usuarios_data=0;
 }
 
+//funcion que define las cabeceras de la tabla de usuarios*
 function Cabeceras_usuarios(){
     var ancho_tabla=document.getElementById('area_tabla');
     ancho_tabla.style.maxWidth='600px'; 
@@ -67,10 +70,12 @@ function Cabeceras_usuarios(){
     document.getElementById('cabeceras').innerHTML=cabeceras_tabla;
 }
 
+//funcion que crea el formulario con los campos necesarios para crear un nuevo usuario.
 function Agregar_usuario(){
+    //FIXME:ENVIAR DATOS EN FORMATO JSON
     document.getElementById('formulario_agregar').innerHTML="";
     contenido_agregar=`<p>INGRESE LOS DATOS DEL NUEVO USUARIO</p>
-                      <form action="/api/rq_tUsuarios.php" method="post" target="R1_iframe">
+                      <form action="../../backend/api/ar_tUsuarios.php" method="post" target="R1_iframe">
                         <p><input id="d1" class="w3-input w3-padding-16 w3-border" type="text" placeholder="USUARIO" required name="Us_usuario"></p>
                         <p><input id="d2" class="w3-input w3-padding-16 w3-border" type="text" placeholder="CONTRASEÑA" required name="Us_contraseña"></p>
                         <p><input id="d3" class="w3-input w3-padding-16 w3-border" type="text" placeholder="NIVEL" required name="Us_nivel"></p>
@@ -82,6 +87,7 @@ function Agregar_usuario(){
     document.getElementById('formulario_agregar').innerHTML=contenido_agregar;
 }
 
+//funcion que crea y vizualiza el campo ID para la busqueda del usaurio a actualizar
 function Actualizar_usuario(){
     document.getElementById('busqueda_id').innerHTML="";
     busqueda_folio=`<label><b>INGRESE EL USUARIO</b></label>
@@ -90,14 +96,15 @@ function Actualizar_usuario(){
     document.getElementById('busqueda_id').innerHTML=busqueda_folio;
 }
 
+//funcion que carga el formulario para actualizar el usuario
 function Actualizar_datos_usuario(){
     if(document.getElementById("usuarioA").value!=="")
     {
         usuario_A = document.getElementById("usuarioA").value;
         //console.log(id_folio);
-        let urlf = "http://10.10.20.15/api/rq_tUsuarios.php?usuario="+usuario_A;
-        console.log(urlf);
-        fetch(urlf).then(response =>response.json()) 
+        let urla = Us_urlf + "?Us_ID=" + usuario_A;
+        console.log(urla);
+        fetch(urla).then(response =>response.json()) 
         .then(data =>actualizar(data))
         .catch(error=> console.log(error))
 
@@ -114,7 +121,7 @@ function Actualizar_datos_usuario(){
                 <label><b>Usuario</b></label>
                 <input  id="d6" class="w3-input w3-padding-16 w3-border" type="text" value =${data[0].Us_Usuario} name="Us_usuario">
                 <label><b>Contraseña</b></label>
-                <input id="d7" class="w3-input w3-padding-16 w3-border" type="text" value =${data[0].Us_Contra} name="Us_contraseña">
+                <input id="d7" class="w3-input w3-padding-16 w3-border" type="text" value =${data[0].Us_Contraseña} name="Us_contraseña">
                 <label><b>Nivel</b></label>
                 <input id="d8" class="w3-input w3-padding-16 w3-border" type="text" value =${data[0].Us_Nivel} name="Us_nivel">
                 <label><b>Descripcion</b></label>
@@ -140,29 +147,6 @@ function Eliminar_usuario(){
     document.getElementById('b_borrar_id').innerHTML=borrar_folio;
 }
 
-function borrar_operador(){
-    id_usuario_b = document.getElementById("b_id_usuario").value;
-    console.log(id_usuario_b);
-    let urlf = "http://10.10.20.15/api/rq_tUsuarios.php";
-    var us_id = {DI: id_usuario_b};
-    fetch(urlf,{
-        method:'POST',
-        body: JSON.stringify(us_id),
-        headers:{
-                    'Content-Type': 'application/json'
-                }
-    })
-    .then(Response=>Response.string)
-    .then(usuario_data=>eliminar(usuario_data))
-    .catch(error=> console.log(error))
-
-    const eliminar=(usuario_data)=>{
-            console.log(usuario_data);
-            document.getElementById('mensaje_eliminar').innerHTML="";
-            document.getElementById('mensaje_eliminar').innerHTML=`Se elimino el registro del operador con folio: ${document.getElementById("b_id_usuario").value}`;
-    }
-    usuario_data=0;
-}
 
 function limpiar_formulario_usuario(ini,num){
     

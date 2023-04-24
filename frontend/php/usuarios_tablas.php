@@ -53,8 +53,8 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
         <a href="#" onclick="Cargar_plantilla_proyectos()" class="w3-bar-item w3-button w3-center w3-padding-16">PROYECTO</a>
         <a href="#" onclick="Cargar_plantilla_operadores()" class="w3-bar-item w3-button w3-center w3-padding-16">OPERADORES</a>
         <a href="#" onclick="Cargar_plantilla_usuarios()" class="w3-bar-item w3-button w3-center w3-padding-16">USUARIOS</a>
-        <a href="#" onclick="Cargar_plantilla_soldadura_externa()" class="w3-bar-item w3-button w3-center w3-padding-16">TUBERIA EXTERNA</a>
-        <a href="#" onclick="Cargar_plantilla_soldadura_interna()" class="w3-bar-item w3-button w3-center w3-padding-16">TUBERIA INTERNA</a>
+        <!-- <a href="#" onclick="Cargar_plantilla_soldadura_externa()" class="w3-bar-item w3-button w3-center w3-padding-16">TUBERIA EXTERNA</a>
+        <a href="#" onclick="Cargar_plantilla_soldadura_interna()" class="w3-bar-item w3-button w3-center w3-padding-16">TUBERIA INTERNA</a> -->
         <p id="usuario_activo" class="w3-small w3-center">bienvenid@ <?php echo $_SESSION['S_usuario']; ?></p>
         <p id="usuario_nivel" class="w3-small w3-center"><?php echo $_SESSION['S_nivel']; ?></p>
     </nav>

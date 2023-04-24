@@ -10,7 +10,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo json_encode($_POST);
             
         if($_POST != NULL) {
-            if(Usuario::create_usuario($_POST["Us_Folio"],$_POST['Us_Usuario'],$_POST['Us_Puesto'],$_POST['Us_Contraseña'])){
+            if(Usuario::crear_usuario($_POST["Us_Folio"],$_POST['Us_Usuario'],$_POST['Us_Puesto'],$_POST['Us_Contraseña'])){
                     
                 http_response_code(200);
             }//end if
@@ -27,10 +27,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
 
         if(isset($_GET['Us_ID'])) {
-            echo json_encode(Usuario::read_usuario($_GET['Us_ID']));
+            echo json_encode(Usuario::obtener_registro_usuario($_GET['Us_ID']));
         }//end if
         else {
-            echo json_encode(Usuario::read_usuarios());
+            echo json_encode(Usuario::obtener_registros_usuarios());
         }//end else
 
         break;

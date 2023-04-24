@@ -3,7 +3,7 @@
 //con la base  de datos.
 //include('conexion_db.php');
 require_once "../../backend/clases/clase_conexion.php";
-
+require_once "console_log.php";
 //cuando se da iniciar sesion se checa que no esten vacios los valores 
 //del formuario
 $usuario = addslashes($_POST['usuario']);
@@ -12,18 +12,19 @@ if(empty($usuario) || empty($contra)){
     header("Location:../../index.php");
     exit();
 }
+echo ("usuario: " . $usuario . " contra: " . $contra);
 
-$conexion_db =new Conexion();
-        $query = "SELECT *FROM  usuarios";
-        $resultado = $conexion_db->query($query);
-        $datos = [];
+// $conexion_db =new Conexion();
+//         $query = "SELECT *FROM  usuarios";
+//         $resultado = $conexion_db->query($query);
+// $datos = [];
 
 $conexion_db =new Conexion();
 //se busca que el usuario exista en el base de datos
 $query = "SELECT * from usuarios where Us_usuario='" . $usuario . "'";
 $resultado = $conexion_db->query($query);
 $data=$resultado->fetch_assoc();
-//echo $data;
+write_to_console($data);
 
 //se inicializan las variables globales de inicio de sesion.
 $_SESSION['S_usuario_conectado']=false;
@@ -34,8 +35,8 @@ $_SESSION['S_usuario']='NO EXISTE USUARIO';
 if(!empty($data)){
     //se compara la contraseña que el usuario escribio en el formulario
     //con la que esta registrada en la base de datos
-    if($contra==$data['Us_Contra']){
-        //se iniciara sesion y se declaran varaibles globales 
+    if($contra==$data['Us_Contraseña']){
+        //se iniciara sesion y se declaran variables globales 
         //con los datos del usuario.
         session_start();
         $_SESSION['S_usuario_conectado']=true;

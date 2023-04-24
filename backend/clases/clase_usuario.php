@@ -5,7 +5,7 @@ require_once "../clases/clase_conexion.php";
 class Usuario{
     
 
-    public static function create_usuario($Us_Folio,$Us_Usuario, $Us_Puesto, $Us_Contra) {
+    public static function crear_usuario($Us_Folio,$Us_Usuario, $Us_Puesto, $Us_Contra) {
         $conexion_db =new Conexion();
         $query = "INSERT INTO usuarios (Us_Folio,Us_Usuario, Us_Puesto, Us_Contraseña)
         VALUES ('$Us_Folio','$Us_Usuario', '$Us_Puesto', '$Us_Contra')";
@@ -16,7 +16,7 @@ class Usuario{
         return FALSE;
     }//end create_usuario
 
-    public static function read_usuarios(){
+    public static function obtener_registros_usuarios(){
         $conexion_db =new Conexion();
         $query = "SELECT *FROM  usuarios";
         $resultado = $conexion_db->query($query);
@@ -27,7 +27,7 @@ class Usuario{
                     'Us_ID'=>$row['Us_ID'],
                     'Us_Usuario'=>$row['Us_Usuario'],
                     'Us_Nivel'=>$row['Us_Nivel'],
-                    'Us_Contra'=>$row['Us_Contraseña'],
+                    'Us_Contraseña'=>$row['Us_Contraseña'],
                     'Us_Descripcion'=>$row['Us_Descripcion'],
                 ];
             }//end while
@@ -35,7 +35,7 @@ class Usuario{
         }//end if
     }//end read_usuarios
     
-    public static function read_usuario($id_usuario) {
+    public static function obtener_registro_usuario($id_usuario) {
         $conexion_db =new Conexion();
         $query = "SELECT *FROM  usuarios WHERE Us_ID=$id_usuario";
         $resultado = $conexion_db->query($query);
@@ -46,7 +46,7 @@ class Usuario{
                     'Us_ID'=>$row['Us_ID'],
                     'Us_Usuario'=>$row['Us_Usuario'],
                     'Us_Nivel'=>$row['Us_Nivel'],
-                    'Us_Contra'=>$row['Us_Contraseña'],
+                    'Us_Contraseña'=>$row['Us_Contraseña'],
                     'Us_Descripcion'=>$row['Us_Descripcion'],
                 ];
             }//end while

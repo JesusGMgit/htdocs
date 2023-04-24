@@ -8,6 +8,7 @@ if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
 }elseif($_SESSION['S_usuario']!=""){
   $_SESSION['S_usuario']='u2';
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +42,7 @@ if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
           <input class="w3-input w3-border" type="password" placeholder="Ingresa tu contraseña" name="contra" required>
           <br>
           <button class="w3-button w3-right w3-blue w3-padding" type="submit">ACCEDER</button>
-          <button class="w3-button w3-left  w3-light-grey w3-padding" type="button" onclick="window.location.href='../html/en_construcion.html'">CREAR CUENTA</button>
+          <!-- <button class="w3-button w3-left  w3-light-grey w3-padding" type="button" onclick="window.location.href='../html/en_construcion.html'">CREAR CUENTA</button> -->
           
         </div>
       </form>
