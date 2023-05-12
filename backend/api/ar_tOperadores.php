@@ -36,12 +36,14 @@ switch ($_SERVER['REQUEST_METHOD']) {
             // echo "i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
             $i+=1;
         }
-        if(isset($_GET[$Garray[0]])){
+        if(isset($Garray_datos[0])){
+            
             if($Garray_datos[0]==""){
                 echo "null";
             }else{
                 echo json_encode(Operador::Leer_operador($Garray_datos[0]));
             }
+            
         }//end if
         else {
             echo json_encode(Operador::Leer_operadores());

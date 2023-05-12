@@ -35,15 +35,18 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $Garray[$i]=$key;
             $Garray_columnas[$i]=str_replace("T","Tin",$key);
             $Garray_datos[$i]=$_GET[$key];
-            // echo "i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
+            // $temporal=!$Garray_datos[$i] ;
+            // echo $temporal . " i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
             $i+=1;
         }
-        if(isset($_GET[$Garray[0]])){
+        if(isset($Garray_datos[0])){
+            
             if($Garray_datos[0]==""){
                 echo "null";
             }else{
-                echo json_encode(Proyecto::Leer_proyecto($_GET['Pro_ID']));
+                echo json_encode(Proyecto::Leer_proyecto($Garray_datos[0]));
             }
+                
         }//end if
         else {
             echo json_encode(Proyecto::Leer_proyectos());

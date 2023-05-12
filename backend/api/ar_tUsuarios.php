@@ -25,28 +25,32 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 
     case 'GET':
-        $Garray_columnas= array();
-        $Garray_datos=array();
-        $Garray=array();
-        $i=0;
-        foreach($_GET as $key => $value) {
-            $Garray[$i]=$key;
-            $Garray_columnas[$i]=str_replace("T","Tin",$key);
-            $Garray_datos[$i]=$_GET[$key];
-            // secho "i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
-            $i+=1;
-        }
-        if(isset($_GET[$Garray[0]])){
-            if($Garray_datos[0]==""){
-                echo "null";
-            }else{
-                echo json_encode(Usuario::obtener_registro_usuario($Garray_datos[0]));
+        
+            $Garray_columnas= array();
+            $Garray_datos=array();
+            $Garray=array();
+            $i=0;
+            foreach($_GET as $key => $value) {
+                $Garray[$i]=$key;
+                $Garray_columnas[$i]=str_replace("T","Tin",$key);
+                $Garray_datos[$i]=$_GET[$key];
+                // $temporal=!$Garray_datos[$i] ;
+                // echo $temporal . " i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
+                $i+=1;
             }
+            if(isset($Garray_datos[0])){
             
-        }//end if
-        else {
-            echo json_encode(Usuario::obtener_registros_usuarios());
-        }//end else
+                if($Garray_datos[0]==""){
+                    echo "null";
+                }else{
+                    echo json_encode(Usuario::obtener_registro_usuario($Garray_datos[0]));
+                }
+                
+            }//end if
+            else{
+                echo json_encode(Usuario::obtener_registros_usuarios());
+            }
+   
 
         break;
 
