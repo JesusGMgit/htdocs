@@ -27,9 +27,23 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 
     case 'GET':
-
-        if(isset($_GET['Pro_ID'])) {
-            echo json_encode(Proyecto::Leer_proyecto($_GET['Pro_ID']));
+        $Garray_columnas= array();
+        $Garray_datos=array();
+        $Garray=array();
+        $i=0;
+        foreach($_GET as $key => $value) {
+            $Garray[$i]=$key;
+            $Garray_columnas[$i]=str_replace("T","Tin",$key);
+            $Garray_datos[$i]=$_GET[$key];
+            // echo "i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
+            $i+=1;
+        }
+        if(isset($_GET[$Garray[0]])){
+            if($Garray_datos[0]==""){
+                echo "null";
+            }else{
+                echo json_encode(Proyecto::Leer_proyecto($_GET['Pro_ID']));
+            }
         }//end if
         else {
             echo json_encode(Proyecto::Leer_proyectos());

@@ -25,9 +25,23 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 
     case 'GET':
-
-        if(isset($_GET['Op_Folio'])) {
-            echo json_encode(Operador::Leer_operador($_GET['Op_Folio']));
+        $Garray_columnas= array();
+        $Garray_datos=array();
+        $Garray=array();
+        $i=0;
+        foreach($_GET as $key => $value) {
+            $Garray[$i]=$key;
+            $Garray_columnas[$i]=str_replace("T","Tin",$key);
+            $Garray_datos[$i]=$_GET[$key];
+            // echo "i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
+            $i+=1;
+        }
+        if(isset($_GET[$Garray[0]])){
+            if($Garray_datos[0]==""){
+                echo "null";
+            }else{
+                echo json_encode(Operador::Leer_operador($Garray_datos[0]));
+            }
         }//end if
         else {
             echo json_encode(Operador::Leer_operadores());

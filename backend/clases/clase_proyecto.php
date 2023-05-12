@@ -37,7 +37,8 @@ class Proyecto{
                     'Pro_Fundente'=>$row['Pro_Fundente'],
                     'Pro_OrdenTrabajo'=>$row['Pro_OrdenTrabajo'],
                     'Pro_Especificacion'=>$row['Pro_Especificacion'],
-                    'Pro_wps'=>$row['Pro_WPS']
+                    'Pro_wps'=>$row['Pro_WPS'],
+                    'Pro_fecha_creacion'=>$row['Pro_fecha_creacion']
                 ];
             }//end while
             return $datos;
@@ -60,7 +61,8 @@ class Proyecto{
                     'Pro_Fundente'=>$row['Pro_Fundente'],
                     'Pro_OrdenTrabajo'=>$row['Pro_OrdenTrabajo'],
                     'Pro_Especificacion'=>$row['Pro_Especificacion'],
-                    'Pro_WPS'=>$row['Pro_WPS']
+                    'Pro_WPS'=>$row['Pro_WPS'],
+                    'Pro_fecha_creacion'=>$row['Pro_fecha_creacion']
                 ];
             }//end while
             return $datos;
