@@ -30,7 +30,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 
     case 'GET':
-        $Garray_columnas= array();
+       $Garray_columnas= array();
         $Garray_datos=array();
         $Garray=array();
         $i=0;
@@ -38,12 +38,19 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $Garray[$i]=$key;
             $Garray_columnas[$i]=str_replace("T","Tin",$key);
             $Garray_datos[$i]=$_GET[$key];
-            //echo "i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
+            // $temporal=!$Garray_datos[$i] ;
+            // echo $temporal . " i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";            
             $i+=1;
         }
-        if(isset($_GET[$Garray[0]])){
-            //echo "fecha: " . $_GET['fecha'] . " :";
-            echo json_encode(soldadura_interna::obtener_registros_interna("tuberia_soldadura_interna_3",$Garray_columnas[0],$Garray_datos[0]));
+        if(isset($Garray[0])){
+
+            if($Garray_datos[0]==""){
+                echo "null";
+            }else{
+                echo json_encode(soldadura_interna::obtener_registros_interna("tuberia_soldadura_interna_3",$Garray_columnas[0],$Garray_datos[0]));
+                // echo json_encode(Proyecto::Leer_proyecto($Garray_datos[0]));
+            }
+            // echo json_encode(soldadura_interna::obtener_registros_interna("tuberia_soldadura_interna_1",$Garray_columnas[0],$Garray_datos[0]));
         }
         else {
             //echo "TODOS LOS REGISTROS DE TUBERIA EXTERNA 34";

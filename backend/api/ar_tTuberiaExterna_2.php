@@ -39,9 +39,15 @@ switch ($_SERVER['REQUEST_METHOD']) {
             //echo "i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
             $i+=1;
         }
-        if(isset($_GET[$Garray[0]])){
-            //echo "fecha: " . $_GET['fecha'] . " :";
-            echo json_encode(soldadura_externa::obtener_registros_externa("tuberia_soldadura_externa_2",$Garray_columnas[0],$Garray_datos[0]));
+        if(isset($Garray[0])){
+
+            if($Garray_datos[0]==""){
+                echo "null";
+            }else{
+                echo json_encode(soldadura_externa::obtener_registros_externa("tuberia_soldadura_externa_2",$Garray_columnas[0],$Garray_datos[0]));
+                // echo json_encode(Proyecto::Leer_proyecto($Garray_datos[0]));
+            }
+            // echo json_encode(soldadura_interna::obtener_registros_interna("tuberia_soldadura_interna_1",$Garray_columnas[0],$Garray_datos[0]));
         }
         else {
             //echo "TODOS LOS REGISTROS DE TUBERIA EXTERNA 34";
