@@ -33,23 +33,23 @@ if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
     <p class="w3-large w3-center">Sistema de Adquisición de Datos de Soldadura</p>
    
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:350px">
-      
-      <form class="w3-container" action="usuario_log.php" method="post">
-        <div class="w3-section">
+      <div class="w3-section w3-center w3-padding">
+        <button class="w3-button w3-round-large w3-large w3-blue w3-padding" onclick="window.location.href='busqueda_tubo.php'">REPORTES</button>
+      </div>
+      <!-- <form class="w3-container" action="usuario_log.php" method="post">
+        
           <label><b>Usuario</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Ingresa tu Usuario" name="usuario" required>
           <label><b>Contraseña</b></label>
           <input class="w3-input w3-border" type="password" placeholder="Ingresa tu contraseña" name="contra" required>
           <br>
           <button class="w3-button w3-right w3-blue w3-padding" type="submit">ACCEDER</button>
-          <!-- <button class="w3-button w3-left  w3-light-grey w3-padding" type="button" onclick="window.location.href='../html/en_construcion.html'">CREAR CUENTA</button> -->
-          
-        </div>
-      </form>
-      <br>
+          <button class="w3-button w3-left  w3-light-grey w3-padding" type="button" onclick="window.location.href='../html/en_construcion.html'">CREAR CUENTA</button>
+         
+      </form> -->
       <div class="w3-container w3-padding w3-border-top w3-light-grey">
-        <span class="w3-left w3-hide-small w3-small"><button onclick="window.location.href='busqueda_tubo.php'">REPORTES</button></span>
-        <span class="w3-right w3-hide-small w3-small"><button onclick="document.getElementById('id01').style.display='block'">¿Olvidaste tu contraseña?</button></span>
+        <!-- <span class="w3-left w3-hide-small w3-small"><button onclick="window.location.href='busqueda_tubo.php'">REPORTES</button></span> -->
+        <!-- <span class="w3-right w3-hide-small w3-small"><button onclick="document.getElementById('id01').style.display='block'">¿Olvidaste tu contraseña?</button></span> -->
       </div>
 
     </div>
