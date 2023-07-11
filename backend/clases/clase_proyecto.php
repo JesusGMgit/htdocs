@@ -45,9 +45,9 @@ class Proyecto{
         }//end if
     }//end read_usuarios
     
-    public static function Leer_proyecto($id_proyecto) {
+    public static function Leer_proyecto($T_C_proyecto,$T_D_proyecto){
         $conexion_db =new Conexion();
-        $query = "SELECT *FROM  proyectos WHERE Pro_ID=$id_proyecto";
+        $query = "SELECT *FROM  proyectos WHERE " . $T_C_proyecto. "=\"" . $T_D_proyecto . "\"";
         $resultado = $conexion_db->query($query);
         $datos = [];
         if($resultado->num_rows){

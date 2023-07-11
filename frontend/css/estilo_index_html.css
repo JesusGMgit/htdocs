@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum&family=Mukta+Vaani&family=Press+Start+2P&family=Puritan:ital@1&display=swap');
+
+html{
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 20px;
+}
+body{
+    background-color: #0E2954;
+    display: grid;
+    grid-template-columns: 6% auto 6%;
+    grid-template-rows: 1% auto 15%;
+    grid-template-areas: 
+        "sct-b sct-b sct-b"
+        "scl-b contenido-b  scr-b"
+        "scb-b scb-b scb-b";
+    
+}
+
+a{
+    color: white;
+}
+
+#contenido-pagina{
+   
+    grid-area: contenido-b;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 11% 10% auto 15%;
+    grid-template-areas: 
+        "header header header header"
+        "menu menu menu menu"
+        "contenido contenido contenido contenido"
+        "foot foot foot foot";
+}
+/*-------- seccion 1 header */
+
+header{
+    background-color: #EEEEEE;
+    grid-area: header;
+    border-radius: 2px;
+    /* width: 1000px; */
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 98% auto;
+    grid-template-areas: "logo-h fecha-h n-h login-h"
+                         "na1 na2 na3 botones-h";
+}
+
+#div-logo{
+    grid-area: logo-h;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#logo{
+    width: 130px;
+    height: 60px;
+    margin: 3px;
+}
+
+#Fecha-Hora{
+    grid-area: fecha-h;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+    font-size: 24px;
+}
+
+#bloque-sesion{
+    grid-area: login-h;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+input{
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 18px;
+    margin: 3px;
+}
+
+
+.elementos-login button{
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 17px;
+    margin: 3px;
+}
+
+.elementos-login{
+    display: flex;
+    justify-content: right;
+}
+
+/*------- seccion 2 menu de navegacion */
+nav{
+    grid-area: menu;
+    margin: 10px;
+    display:flex;
+    justify-content: space-around;
+}
+nav button{
+    background-color:#0E2954 ;
+    color:white;
+    font-size: 20px;
+    width: 100%;
+    border:none;
+    border-radius: 2px;
+}
+nav button:hover {
+    background-color: #DAFFFB;
+    color:#176B87;
+}
+
+/*--------------------- seccion 3 */
+
+.contenido-central{
+    grid-area: contenido;
+    display: flex;
+    justify-content: center;
+}
+
+/* configuraciones de la imagen  */
+#contenido-foto img{
+    width: auto;
+    height: 555px;
+}
+
+/* configuracioes css para descargar reporte */
+#contenido-reporte-tubo{
+    /* background-color: #1F6E8C; */
+    height: 555px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    background-color: #0E2954;
+    border:1px solid #1F6E8C;
+}
+
+#contenido-reporte-tubo label{
+    color: white;
+    margin-top: 10px;
+}
+
+#contenido-reporte-tubo input{
+    margin: 3px;
+}
+
+#contenido-reporte-tubo button{
+    background-color:#5C8984 ;
+    color:white;
+    font-size: 24px;
+    margin: 3px;
+}
+
+hr{
+    width: 100%;
+    height: 5px;
+    background-color: #1F6E8C;
+    border: none;
+}
+
+
+#links_descarga div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 16px;
+}
+
+#links_descarga label{
+    margin:1px;
+
+}
+
+#links_descarga p{
+    color: white;
+    font-size: 16px;
+}
+
+/* configuracioes css para reportes del dia */
+
+#contenido-reportes-dia{
+    background-color:#176B87;
+    height: 555px;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 2% auto 2%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "r1-ct  tabla-in l1-ct"
+                         "r2-ct  tabla-ex l2-ct";
+}
+
+.contenido-tablas-inex{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#section-tablas-in{
+    grid-area: tabla-in;
+}
+
+#section-tablas-ex{
+    grid-area: tabla-ex;
+    margin-bottom: 8px;
+}
+
+
+.tablas-reportes-dia{
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tablas-reportes-dia label{
+    color:antiquewhite;
+    
+}
+
+.tabla-tubos{
+    overflow-y: scroll;
+    
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #d1d1d1;
+}
+
+
+.tabla-tubos th, td{
+    font-size: 14px;
+    border: black solid 1px;
+    background-color: #EEEEEE;
+}
+
+.tabla-tubos th{
+    background-color:#068FFF;
+}
+
+
+/*  onfiguracioes css para contador de tubos*/
+#contenido-contador-tubos{
+    background-color: #84A7A1;
+    height: 555px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    background-color: #0E2954;
+    border:1px solid #1F6E8C;
+    color: white;
+    
+
+}
+
+/* Configuracioes css para contenido proyectos*/
+
+#contenido-proyectos{
+    background-color: #84A7A1;
+    height: 555px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    background-color: #0E2954;
+    border:1px solid #1F6E8C;
+    color: white;
+}
+
+#div-informacion-proyecto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+#combobox_contenedor label, select{
+    margin:2px;
+}
+
+/* seccion 4 */
+
+footer{
+    grid-area: foot;
+    margin: 10px;
+    color:white;
+    display:flex;
+    justify-content: space-around;
+
+}

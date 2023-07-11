@@ -3,66 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estilo_pagina_inicio.css">
-    <link rel="stylesheet" href="../css/w3.css">
-    <script src="../js/pagina_inicio/utilidades.js" defer></script>
-    <title>INICIO</title>
+    <script src="../js/pagina_inicio/utilidades.js"></script>
+    <script src="../js/pagina_inicio/descarga_reportes_tubo.js"></script>
+    <script src="../js/pagina_inicio/tablas_reportes_dia.js"></script>
+    <script src="../js/pagina_inicio/informacion_proyectos.js"></script>
+    <script src="../js/pagina_inicio/funciones_index_html.js"></script>
+    <link rel="stylesheet" href="../css/estilo_index_html.css">
+    <title>SADS</title>
 </head>
-<body onload="fecha_Actual()">
-    <div class="w3-container">
+<body onload="inicio_pagina()">
+    <div id="contenido-pagina">
         <!-- Seccion 1 encabezado -->
-        <header class="fila">
-            <div class="col-lg-3">
-                <p><img src="../img/logo-1.png"style="width:30%"></p>
+        <header>
 
+            <div id="div-logo">
+                <img onclick="mostrar_contenidos('a')" id="logo" src="../img/logo-1.png" alt="logo_tubacero">
             </div>
-            <div class="col-lg-3">
-                <label class="fila" id="fecha_actual" >Fecha</label>
-                <label class="fila" id="hora_actual">Hora</label>
+
+            <div id="Fecha-Hora" >
+                <label id="fecha_actual" >Fecha</label>
+                <label id="hora_actual">Hora</label>
             </div>
            
-            <div class="col-lg-6">
-                
-                <div class="col-lg-9">
+            <div id="bloque-sesion">
+                <div class="elementos-login">
                     <input type="text" placeholder="FOLIO">
                     <input type="password" placeholder="Contraseña">
                 </div>
-                <div class="col-lg-3">
-                    <button class="fila">Entrar</button>
-                    <button class="fila">Registarse</button>
+                <div class="elementos-login">
+                    <button>Entrar</button>
+                    <button>Registarse</button>
                 </div>
             </div>
         </header>
 
         <!-- Seccion 2 -->
-    
-        <nav class="fila">
-            <ul>
-                <li class="col-lg-3"><button>Busqueda reportes</button></li>
-                <li class="col-lg-3"><button>Reportes del dia</button></li>
-                <li class="col-lg-3"><button>Contador de tubos</button></li>
-                <li class="col-lg-3"><button>Proyectos</button></li>
-            </ul>
+        <nav >
+                <button onclick="mostrar_contenidos('b')">Busqueda reporte</button>
+                <button onclick="mostrar_contenidos('c')">Reportes del dia</button>
+                <button onclick="mostrar_contenidos('d')">Contador de tubos</button>
+                <button onclick="mostrar_contenidos('e')">Proyectos</button>
         </nav>
 
         <!-- Seccion 3 -->
-        <section class="fila">
-            <div  id="contenido_central" class="col-lg-12" >
+        <section class="contenido-central">
+
+            <div  id="contenido-foto" >
                 <img src="../img/DJI_0017-1024x576.jpg" alt="Tubacero Planta Pánuco, Veracruz">
             </div>
+
+            <div id="contenido-reporte-tubo">
+                            <label><b>No. de tubo</b></label>
+                            <input type="text" placeholder="No. de tubo" id="No_tubo" required>
+                            <button type="button" onclick="descarga_reportes()">Buscar reportes</button>
+                            <hr>
+                            <div id="links_descarga">
+
+                            </div>
+            </div>
+
+            <div id="contenido-reportes-dia">
+
+                <section class="contenido-tablas-inex" id="section-tablas-in">
+                    
+                    <div class="tablas-reportes-dia" >
+                        <label for=""><strong>INTERNA 1</strong></label>
+                        <div class="tabla-tubos" id="INTERNA1">
+
+                        </div>
+                    </div>
+
+                    
+                    <div class="tablas-reportes-dia">
+                        <label for=""><strong>INTERNA 2</strong></label>
+                        <div class="tabla-tubos" id="INTERNA2">
+
+                        </div>
+                    </div>
+
+                   
+                    <div class="tablas-reportes-dia" >
+                        <label for=""><strong>INTERNA 3</strong></label>
+                        <div class="tabla-tubos" id="INTERNA3">
+
+                        </div>
+                    </div>
+                </section>
+
+                <section class="contenido-tablas-inex" id="section-tablas-ex">
+                    
+                    <div class="tablas-reportes-dia" >
+                        <label for=""><strong>EXTERNA 1</strong></label>
+                        <div class="tabla-tubos" id="EXTERNA1">
+
+                        </div>
+                    </div>
+
+                    
+                    <div class="tablas-reportes-dia" >
+                        <label for=""><strong>EXTERNA 2</strong></label>
+                        <div class="tabla-tubos" id="EXTERNA2">
+
+                        </div>
+                    </div>
+
+                    
+                    <div class="tablas-reportes-dia" >
+                        <label for=""><strong>EXTERNA 3</strong></label>
+                        <div class="tabla-tubos" id="EXTERNA3">
+
+                        </div>
+                    </div>
+                </section>
+                
+
+            </div>
+
+            <div id="contenido-contador-tubos">
+                <p>EN CONTRUCCION ESTA SECCION</p>
+                <p>Comentarios al 8331923114</p>
+            </div>
+
+            <div id="contenido-proyectos">
+                <label for=""><b>Datos del proyecto</b></label>
+                <div id="combobox_contenedor">
+                    <label for="">O.T. :</label>
+                    <select onchange="obtener_informacion_proyecto()" id="proyecto_combobox">
+                        <option selected>SELECCIONE UNO</option>
+                        
+                    </select>
+                </div>
+                                
+                <hr>
+                <div id="div-informacion-proyecto">
+
+                </div>
+            </div>
+
         </section>
 
         <!-- Seccion 4 -->
-        <footer class="fila w3-center">
-            <div class="col-lg-3"><p>Tubacero</p></div>
+        <footer>
+            <div class="col-lg-3"><p>Tubacero planta Panuco</p></div>
             <div class="col-lg-6"><p>Sistema de Adquisicion de Datos de Soldadura (SADS)</p></div>
-            <div class="col-lg-3"><p>Depto. Mantenimiento</p></div>
+            <div class="col-lg-3"><p><a href="http://tubacero.com.mx/">Tubacero</a></p></div>
         </footer>
 
     </div>
 
-
-    
+        
 </body>
 
 

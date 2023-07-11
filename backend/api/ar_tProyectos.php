@@ -33,10 +33,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $i=0;
         foreach($_GET as $key => $value) {
             $Garray[$i]=$key;
-            $Garray_columnas[$i]=str_replace("T","Tin",$key);
+            $Garray_columnas[$i]=$key;
             $Garray_datos[$i]=$_GET[$key];
             // $temporal=!$Garray_datos[$i] ;
-            // echo $temporal . " i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
+            //  echo $temporal . " i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
             $i+=1;
         }
         if(isset($Garray_datos[0])){
@@ -44,11 +44,14 @@ switch ($_SERVER['REQUEST_METHOD']) {
             if($Garray_datos[0]==""){
                 echo "null";
             }else{
-                echo json_encode(Proyecto::Leer_proyecto($Garray_datos[0]));
+                //obtener un regitro de la tabla proyectos )
+                // echo json_encode(Proyecto::Leer_proyecto($Garray_datos[0]));
+                echo json_encode(Proyecto::Leer_proyecto($Garray_columnas[0],$Garray_datos[0]));
             }
                 
         }//end if
         else {
+            //todos los registros de la tabla proyectos
             echo json_encode(Proyecto::Leer_proyectos());
         }//end else
 
