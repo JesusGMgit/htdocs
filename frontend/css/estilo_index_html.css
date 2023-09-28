@@ -18,6 +18,7 @@ body{
 
 a{
     color: white;
+    font-size: 16px;
 }
 
 #contenido-pagina{
@@ -152,8 +153,12 @@ nav button:hover {
 #contenido-reporte-tubo button{
     background-color:#5C8984 ;
     color:white;
-    font-size: 24px;
+    font-size: 20px;
     margin: 3px;
+}
+
+#contenido-reporte-tubo a{
+    font-size: 16px;
 }
 
 hr{
@@ -173,7 +178,7 @@ hr{
 
 #links_descarga label{
     margin:1px;
-
+    font-size: 16px;
 }
 
 #links_descarga p{

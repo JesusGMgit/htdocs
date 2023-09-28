@@ -31,7 +31,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $i=0;
         foreach($_GET as $key => $value) {
             $Garray[$i]=$key;
-            $Garray_columnas[$i]=str_replace("T","Tin",$key);
+            $Garray_columnas[$i]=$key;
             $Garray_datos[$i]=$_GET[$key];
             // echo "i= " . $i . " " . $Garray_columnas[$i] . ' = ' . $Garray_datos[$i] . "\n";
             $i+=1;
