@@ -5,6 +5,7 @@ require_once "../clases/clase_conexion.php";
 
 class soldadura_interna{
 
+//----------------------------- Create - funciones para crear registros en las tablas--------------------
     //metodo para crear registros de tuberia
     public static function crear_registro_tuberia_interna($tuberia_in123,$Tin_ID_tubo,$Tin_No_tubo,$Tin_No_placa,
                                                           $Tin_ID_proyecto,$Tin_Lote_alambre,$Tin_Lote_fundente,
@@ -25,6 +26,7 @@ class soldadura_interna{
         return FALSE;
     }//end 
 
+//----------------------------- Read - funciones para leer registros de las tablas--------------------
     //Metodos (funciones) por busqueda para de registros
     //funcion que realiza un consulta para obtener todos los resgistros de una tabla
     //las tablas son de la tuberia que pasa por las maquinas de soldadura interna
@@ -92,11 +94,11 @@ class soldadura_interna{
         }//end if
     }//fin de consulta de un registro de tabla
 
-
+//----------------------------- Update- funciones para actualizar registros de las tablas--------------------
     //metodo para actualizar regsitro de tubo
     //actualiza un registro por medio de una consulta con los datos del campo o culumna 
     //y el valor corespondiente
-    public static function actualizar_tubo_interna($tuberia_in123,$T_Cbusqueda,$T_Dbusqueda,$T_Cactualizar,$T_Dactualizar) {
+    public static function actualizar_unvalor_tubo_interna($tuberia_in123,$T_Cbusqueda,$T_Dbusqueda,$T_Cactualizar,$T_Dactualizar) {
         $conexion_db = new Conexion(); 
         $query = "UPDATE " .$tuberia_in123. " SET " . $T_Cactualizar . "='" . $T_Dactualizar .
                  "' WHERE " . $T_Cbusqueda . "=\"" . $T_Dbusqueda . "\"";
@@ -107,6 +109,18 @@ class soldadura_interna{
         return FALSE;
     }//end update_usuario
 
+    public static function actualizar_todosvalores_tubo_interna($tuberia_in123,$T_Cbusqueda,$T_Dbusqueda,$T_Cactualizar,$T_Dactualizar) {
+        $conexion_db = new Conexion(); 
+        $query = "UPDATE " .$tuberia_in123. " SET " . $T_Cactualizar . "='" . $T_Dactualizar .
+                 "' WHERE " . $T_Cbusqueda . "=\"" . $T_Dbusqueda . "\"";
+        $conexion_db->query($query);
+        if($conexion_db->affected_rows) {
+            return TRUE;
+        }//end if
+        return FALSE;
+    }
+
+//----------------------------- Delete - funciones para eliminar registros de la tablas--------------------
     //metodo para borrar un registro de tubo
     //funcion que borra un registro por medio de una consulta con el dato de ID de tubo
     public static function borrar_tubo_interna($tuberia_in123,$No_tubo) {

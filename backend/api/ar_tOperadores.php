@@ -10,7 +10,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo json_encode($_POST);
             
         if($_POST != NULL) {
-            if(Operador::crear_operador($_POST['Op_Folio'],$_POST['Op_Nombre'],$_POST['Op_Clave_soldador'],$_POST['Op_Puesto'])){
+            if(Operador::crear_operador($_POST['Op_Folio'],$_POST['Op_Nombre'],$_POST['Op_Clave_soldador'],
+                                        $_POST['Op_Puesto'])){
                     
                 http_response_code(200);
             }//end if
@@ -57,7 +58,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         //echo "get: ". $_GET['Us_ID'];
         //echo json_encode($_PUT);
         if($_PUT != NULL) {
-            if(Operador::actualizar_operador($_GET['Op_Folio'],$_PUT['Op_Nombre'],$_PUT['Op_Clave_soldador'],$_PUT['Op_Puesto'])) {
+            if(Operador::actualizar_operador($_PUT['Op_Folio'],$_PUT['Op_Nombre'],$_PUT['Op_Clave_soldador'],$_PUT['Op_Puesto'])) {
                 http_response_code(200);
             }//end if
             else {

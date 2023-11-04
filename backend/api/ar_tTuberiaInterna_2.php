@@ -73,7 +73,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 //echo "i= " . $i . " " . $array_columnas[$i] . ' = ' . $array_datos[$i] . "\n";
                 $i+=1;
             }
-            if(soldadura_interna::actualizar_tubo_interna($Maquina,$array_columnas[0],$array_datos[0],$array_columnas[1],$array_datos[1])) {
+            if(soldadura_interna::actualizar_unvalor_tubo_interna($Maquina,$array_columnas[0],$array_datos[0],$array_columnas[1],$array_datos[1])) {
                 http_response_code(200);
             }//end if
             else {
