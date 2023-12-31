@@ -134,6 +134,27 @@ class soldadura_externa{
         }//end if
     }//fin de consulta de un registro de tabla
 
+    //funcion para obtener el numero de tubos que se llevan soldados en el dia
+    public static function conteo_tubos($tuberia_123, $T_C1, $T_D1){
+
+        $conexion_db =new Conexion();
+        $query = "SELECT COUNT(Tex_ID_Rtubo) FROM ".  $tuberia_123." WHERE " . $T_C1 . "=\"" . $T_D1 . "\"";
+            //echo "\n" . $query . "\n";
+        $resultado = $conexion_db->query($query);
+        $datos_numero_tubos =[];
+        if($resultado->num_rows){
+            while($row = $resultado-> fetch_assoc()){
+                $datos_numero_tubos[]=[
+                    'T_numero_tubos'=>$row['COUNT(Tex_ID_Rtubo)']
+                ];
+            }//end while
+           
+        }//end if
+        
+        return $datos_numero_tubos;
+        
+    }
+
 //----------------------------- Update- funciones para actualizar registros de las tablas--------------------
     //metodo para actualizar regsitro de tubo
     //actualiza un registro por medio de una consulta con los datos de dos campos o culumnas

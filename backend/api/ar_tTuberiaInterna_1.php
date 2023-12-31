@@ -52,9 +52,16 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 echo "null";
             }
             elseif(isset($Garray_columnas[1])){
-                //entra en la funcion para obtner registros para dos filtros (dos campos)
-                echo json_encode(soldadura_interna::obtener_registros_interna_dos_filtros($Maquina,$Garray_columnas[0],$Garray_datos[0],
-                                                                                   $Garray_columnas[1], $Garray_datos[1]));
+                if ($Garray_columnas[0]=="Tin_conteo")
+                {
+                    echo json_encode(soldadura_interna::conteo_tubos($Maquina,$Garray_columnas[1],$Garray_datos[1]));
+                }
+                else{
+                    //entra en la funcion para obtner registros para dos filtros (dos campos)
+                    echo json_encode(soldadura_interna::obtener_registros_interna_dos_filtros($Maquina,$Garray_columnas[0],$Garray_datos[0],
+                                                                                              $Garray_columnas[1], $Garray_datos[1]));
+                }
+                
             }
             else{
                 //entra en la funcion para obtener registros con un filtro(un campo)

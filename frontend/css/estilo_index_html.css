@@ -33,7 +33,7 @@ a{
         "contenido contenido contenido contenido"
         "foot foot foot foot";
 }
-/*-------- seccion 1 header */
+/*+++++++++++++++++++++++++++++++ seccion 1 header +++++++++++++++++++++++++++++++*/
 
 header{
     background-color: #EEEEEE;
@@ -94,7 +94,7 @@ input{
     justify-content: right;
 }
 
-/*------- seccion 2 menu de navegacion */
+/*+++++++++++++++++++++++++++++++ seccion 2 menu de navegacion +++++++++++++++++++++++++++++++*/
 nav{
     grid-area: menu;
     margin: 10px;
@@ -114,7 +114,7 @@ nav button:hover {
     color:#176B87;
 }
 
-/*--------------------- seccion 3 */
+/*+++++++++++++++++++++++++++++++ seccion 3 ++++++++++++++++++++++++++++++++++++++++*/
 
 .contenido-central{
     grid-area: contenido;
@@ -122,13 +122,13 @@ nav button:hover {
     justify-content: center;
 }
 
-/* configuraciones de la imagen  */
+/*Configuraciones de la imagen--------------------------------------------------------------*/
 #contenido-foto img{
     width: auto;
     height: 555px;
 }
 
-/* configuracioes css para descargar reporte */
+/*Configuracioes css para descargar reporte------------------------------------------------*/
 #contenido-reporte-tubo{
     /* background-color: #1F6E8C; */
     height: 555px;
@@ -195,7 +195,7 @@ hr{
     font-size: 16px;
 }
 
-/* configuracioes css para reportes del dia */
+/*Configuracioes css para reportes del dia------------------------------------------------*/
 
 #contenido-reportes-dia{
     background-color:#176B87;
@@ -265,23 +265,60 @@ hr{
 }
 
 
-/*  onfiguracioes css para contador de tubos*/
+/*Configuracioes css para contador de tubos------------------------------------------------*/
 #contenido-contador-tubos{
-    background-color: #84A7A1;
+    background-color:#176B87;
     height: 555px;
-    width: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: left;
-    background-color: #0E2954;
-    border:1px solid #1F6E8C;
-    color: white;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 2% auto 2%;
+    grid-template-rows: 47% 47% 6%;
+    grid-template-areas: "r1-cn  numeros-in l1-cn"
+                         "r2-cn  numeros-ex l2-cn"
+                         "r3-cn  numeros-nota l3-cn";
     
 
 }
 
-/* Configuracioes css para contenido proyectos*/
+.contenido-numeros-inex{
+    display: flex;
+    justify-content: space-around; 
+}
+
+#section-conteo-in{
+    grid-area: numeros-in;
+}
+
+#section-conteo-ex{
+    grid-area: numeros-ex;
+    
+}
+
+#numero-nota{
+  grid-area: numeros-nota; 
+  font-size: 20px; 
+}
+.conteo-dia{
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+}
+
+
+
+.div-numero_conteo{
+    
+}
+
+.numero-conteo{
+    
+}
+
+
+/* Configuracioes css para contenido proyectos------------------------------------------------*/
 
 #contenido-proyectos{
     background-color: #84A7A1;

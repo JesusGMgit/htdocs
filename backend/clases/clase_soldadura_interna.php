@@ -28,7 +28,8 @@ class soldadura_interna{
 
 //----------------------------- Read - funciones para leer registros de las tablas--------------------
     //Metodos (funciones) por busqueda para de registros
-    //funcion que realiza un consulta para obtener todos los resgistros de una tabla
+
+    //funcion que realiza un consulta para obtener todos los registros de una tabla
     //las tablas son de la tuberia que pasa por las maquinas de soldadura interna
     public static function obtener_todos_registros_interna($tuberia_123){
         $conexion_db =new Conexion();
@@ -65,7 +66,7 @@ class soldadura_interna{
     
     
     //funcion que realiza una consulta de un registro de la tabla
-    //esta consulta se pude de ser apartir del columna o campo con el valor correspondiente buscado
+    //esta consulta se puede de ser apartir de la columna o campo con el valor correspondiente buscado
     public static function obtener_registros_interna_un_filtro($tuberia_123,$T_C_get,$T_D_get) {
         $conexion_db =new Conexion();
         $query = "SELECT *FROM ".  $tuberia_123." WHERE " . $T_C_get. "=\"" . $T_D_get . "\"";
@@ -96,7 +97,6 @@ class soldadura_interna{
 
     //lee el registro especificado apartir de dos columnas/campos especificos(en este caso No de tubo e Id de poyecto)
     public static function obtener_registros_interna_dos_filtros($tuberia_123, $T_C1, $T_D1, $T_C2, $T_D2){
-
         $conexion_db =new Conexion();
         $query = "SELECT *FROM ".  $tuberia_123." WHERE " . $T_C1 . "=\"" . $T_D1 . "\" AND "
                                                                 . $T_C2 . "=\"" . $T_D2 . "\"";
@@ -125,6 +125,27 @@ class soldadura_interna{
             return $datos_in;
         }//end if
     }//fin de consulta de un registro de tabla
+
+    //funcion para obtener el numero de tubos que se llevan soldados en el dia
+    public static function conteo_tubos($tuberia_123, $T_C1, $T_D1){
+
+        $conexion_db =new Conexion();
+        $query = "SELECT COUNT(Tin_ID_Rtubo) FROM ".  $tuberia_123." WHERE " . $T_C1 . "=\"" . $T_D1 . "\"";
+            //echo "\n" . $query . "\n";
+        $resultado = $conexion_db->query($query);
+        $datos_numero_tubos =[];
+        if($resultado->num_rows){
+            while($row = $resultado-> fetch_assoc()){
+                $datos_numero_tubos[]=[
+                    'T_numero_tubos'=>$row['COUNT(Tin_ID_Rtubo)']
+                ];
+            }//end while
+           
+        }//end if
+        
+        return $datos_numero_tubos;
+        
+    }
 
 //----------------------------- Update- funciones para actualizar registros de las tablas--------------------
     //metodo para actualizar regsitro de tubo
