@@ -29,7 +29,7 @@ function mostrar_conteos_internas(urlf_conteo,maquina_conteo){
                 numero_in="no hay datos";
                 console.log("conteo: " + numero_in);
             }
-            console.log("datos de "+ maquina_conteo+ ":" + data_conteo_in[0].T_numero_tubos);
+            //console.log("datos de "+ maquina_conteo+ ":" + data_conteo_in[0].T_numero_tubos);
             numero_in = data_conteo_in[0].T_numero_tubos;
             document.getElementById(id_numero).innerHTML = numero_in;
 
@@ -53,7 +53,7 @@ function mostrar_conteos_internas(urlf_conteo,maquina_conteo){
                 numero_ex="no hay datos";
                 console.log("conteo: " + numero_ex);
             }
-            console.log("datos de "+ maquina_conteo+ ":" + data_conteo_ex[0].T_numero_tubos);
+            //console.log("datos de "+ maquina_conteo+ ":" + data_conteo_ex[0].T_numero_tubos);
             numero_ex = data_conteo_ex[0].T_numero_tubos;
             document.getElementById(id_numero).innerHTML = numero_ex;
 

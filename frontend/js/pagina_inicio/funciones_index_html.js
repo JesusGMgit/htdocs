@@ -1,4 +1,5 @@
-let carga_primera_vez=true
+let carga_primera_vez=true;
+let contenido_conteo_dia_bol=false;
 
 function inicio_pagina(){
     fecha_Actual();
@@ -23,6 +24,7 @@ function mostrar_contenidos(letra){
             document.getElementById('contenido-reportes-dia').style.display='none';
             document.getElementById('contenido-contador-tubos').style.display='none';
             document.getElementById('contenido-proyectos').style.display='none';
+            contenido_conteo_dia_bol=false;
             break;
         case 'b':
             document.getElementById('contenido-foto').style.display='none';
@@ -30,6 +32,7 @@ function mostrar_contenidos(letra){
             document.getElementById('contenido-reportes-dia').style.display='none';
             document.getElementById('contenido-contador-tubos').style.display='none';
             document.getElementById('contenido-proyectos').style.display='none';
+            contenido_conteo_dia_bol=false;
             break;
         case 'c':
             contenido_reportes_dia();
@@ -38,6 +41,7 @@ function mostrar_contenidos(letra){
             document.getElementById('contenido-reportes-dia').style.display='grid';
             document.getElementById('contenido-contador-tubos').style.display='none';
             document.getElementById('contenido-proyectos').style.display='none';
+            contenido_conteo_dia_bol=false;
             break;
         case 'd':
             contenido_conteo_dia();
@@ -46,7 +50,7 @@ function mostrar_contenidos(letra){
             document.getElementById('contenido-reportes-dia').style.display='none';
             document.getElementById('contenido-contador-tubos').style.display='grid';
             document.getElementById('contenido-proyectos').style.display='none';
-            
+            contenido_conteo_dia_bol=true;
             break;
         case 'e':
             document.getElementById('contenido-foto').style.display='none';
@@ -54,6 +58,7 @@ function mostrar_contenidos(letra){
             document.getElementById('contenido-reportes-dia').style.display='none';
             document.getElementById('contenido-contador-tubos').style.display='none';
             document.getElementById('contenido-proyectos').style.display='flex';
+            contenido_conteo_dia_bol=false;
             obtener_proyectos();
             break;
     }
@@ -86,14 +91,14 @@ function contenido_conteo_dia(){
 
     for(i_conteo =1; i_conteo <=3; i_conteo++){
         urlf_conteo = direccion_pagina + "/backend/api/ar_tTuberiaInterna_"+i_conteo+".php?T_conteo=0&T_Fecha=" +fecha_contenido;
-        console.log(urlf_conteo);
+        //console.log(urlf_conteo);
         maquina_conteo = "INTERNA"+ i_conteo.toString();
         mostrar_conteos_internas(urlf_conteo, maquina_conteo)
     }
 
     for(i_conteo =1; i_conteo <=3; i_conteo++){
         urlf_conteo = direccion_pagina + "/backend/api/ar_tTuberiaExterna_"+i_conteo+".php?T_conteo=0&T_Fecha=" +fecha_contenido;
-        console.log(urlf_conteo);
+        //console.log(urlf_conteo);
         maquina_conteo = "EXTERNA"+ i_conteo.toString();
         mostrar_conteos_internas(urlf_conteo, maquina_conteo)
     }

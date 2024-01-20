@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="contenido-pagina-temario">
+        <head>
+            <div id="div-logo">
+                <img onclick="mostrar_contenidos('a')" id="logo" src="../../img/logo-1.png" alt="logo_tubacero">
+            </div>
+        </head>
+
+        <nav>
+            <button onclick="mostrar_temario('b')">Electricidad</button>
+            <button onclick="mostrar_temario('c')">Electronica</button>
+            <button onclick="mostrar_temario('d')">Control de motores</button>
+            <button onclick="mostrar_temario('e')">Automatizacion</button> 
+            <button onclick="mostrar_temario('e')">Diagramas electricos</button> 
+            <button onclick="mostrar_temario('e')">Maquinas de Soldar</button> 
+            <button onclick="mostrar_temario('e')">NA's</button> 
+            
+        </nav>
+
+        <section id="section-central-temario">
+             <iframe src="default_temario.html" frameborder="0"></iframe>
+        </section>
+
+        <footer>
+            <div class="col-lg-3"><p>Tubacero planta Panuco</p></div>
+            <div class="col-lg-6"><p>Sistema de Adquisicion de Datos de Soldadura (SADS)</p></div>
+            <div class="col-lg-3"><p><a href="http://tubacero.com.mx/">Tubacero</a></p></div>
+        </footer>
+    </div>
+</body>
+</html>

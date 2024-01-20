@@ -305,17 +305,22 @@ hr{
     align-items: center;
     justify-content: center;
     font-size: 42px;
+    margin: 5px;
+    border:1px solid #a2a8aa;
 }
 
+.conteo-maquina-label{
+    padding: 10px;
+    border: 1px solid #78a4c2;
+}
 
-
-.div-numero_conteo{
+/*.div-numero_conteo{
     
 }
 
 .numero-conteo{
     
-}
+}*/
 
 
 /* Configuracioes css para contenido proyectos------------------------------------------------*/

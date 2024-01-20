@@ -1,5 +1,5 @@
 let direccion_pagina="http://10.10.20.15";
-
+let segundos_para_actualizar_conteo=0;
 function fecha_Actual(){
     let fecha_label=document.getElementById('fecha_actual');
     let hora_label=document.getElementById('hora_actual');
@@ -8,6 +8,13 @@ function fecha_Actual(){
     const [fecha_array, hora_array]=obtener_fecha_hoy();
     fecha_label.innerHTML ="Fecha: " + fecha_array;
     hora_label.innerHTML= "Hora: " + hora_array;
+    segundos_para_actualizar_conteo=segundos_para_actualizar_conteo + 1;
+    if((contenido_conteo_dia_bol==true) && (segundos_para_actualizar_conteo == 300)){
+        //console.log("segundos + retraso= " + segundos_para_actualizar_conteo);
+        segundos_para_actualizar_conteo=0;
+        contenido_conteo_dia();
+        
+    }
     let t = setTimeout(fecha_Actual, 1000);
 }
 function checkTime(i) {
