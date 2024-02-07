@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum&family=Mukta+Vaani&family=Press+Start+2P&family=Puritan:ital@1&display=swap');
+
+html{
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 20px;
+}
+body{
+    background-color: #0E2954;
+    display: grid;
+    grid-template-columns: 6% auto 6%;
+    grid-template-rows: 1% auto 15%;
+    grid-template-areas: 
+        "sct-b sct-b sct-b"
+        "scl-b contenido-b  scr-b"
+        "scb-b scb-b scb-b";
+    
+}
+
+a{
+    color: white;
+    font-size: 16px;
+}
+
+#contenido-pagina-temario{
+   
+    grid-area: contenido-b;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 15% auto 12%;
+    grid-template-areas: 
+        "header header header header"
+        "menu-nav contenido contenido contenido"
+        "foot foot foot foot";
+}
+
+/*+++++++++++++++++++++++++++++++ seccion 1 header +++++++++++++++++++++++++++++++*/
+
+header{
+    background-color: #EEEEEE;
+    grid-area: header;
+    border-radius: 2px;
+    /* width: 1000px; */
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 99% auto;
+    grid-template-areas: "logo-h fecha-h n-h login-h"
+                          "na1 na2 na3 botones-h";
+}
+
+#div-logo{
+    
+    grid-area: logo-h;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#logo{
+    width: 130px;
+    height: 60px;
+    margin: 3px;
+}
+
+/*+++++++++++++++++++++++++++++++ seccion 2 menu de navegacion +++++++++++++++++++++++++++++++*/
+nav{
+    grid-area: menu-nav;
+    margin: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid #DAFFFB;
+}
+nav button{
+    background-color:#0E2954 ;
+    color:white;
+    font-size: 20px;
+    width: 100%;
+    border:none;
+    border-radius: 2px;
+}
+nav button:hover {
+    background-color: #DAFFFB;
+    color:#176B87;
+}
+
+
+/*+++++++++++++++++++++++++++++++ seccion 3 ++++++++++++++++++++++++++++++++++++++++*/
+
+.section-central-temario{
+    grid-area: contenido;
+    display: flex;
+    justify-content: center;
+}
+
+iframe{
+    border: solid;
+    width: 800px;
+    height: 500px;
+    margin-top: 10px;
+}
+
+/*+++++++++++++++++++++++++++++++  seccion 4 ++++++++++++++++++++++++++++++++++++++++*/
+
+footer{
+    grid-area: foot;
+    margin: 10px;
+    color:white;
+    display:flex;
+    justify-content: space-around;
+
+}
