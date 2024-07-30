@@ -13,7 +13,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         if($_POST != NULL) {
             if(isset($_POST['T_AID'])){
-                
+              //TODO QUE DEMONIOS HACE ESTE IF AQUI Y EN CADA ARCHIVO DE INTERNA
             }elseif(isset($_POST['T_ID_tubo'])){
                 soldadura_interna::crear_registro_tuberia_interna($Maquina,$_POST['T_ID_tubo'],$_POST['T_No_tubo'],$_POST['T_No_placa'],
                                         $_POST['T_ID_proyecto'],$_POST['T_Lote_alambre'],$_POST['T_Lote_fundente'],$_POST['T_FolioOperador']
