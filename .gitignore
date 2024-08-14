@@ -1,22 +1,6 @@
 # Other files and folders
-/api
-/app_operador
-/app_servicio
-/app_admin_operador
-/app_cliente_SADS
-/archivos_varios
-/estaba_afuera
-/mantenimiento_archivos
-/otros
-/php
-/pruebas_api.html
-/Reportes
-/reporte_avanzes_SADS
-/sistema-php
-/antiguo_back_front_end
-/archivos_default
 /apps
-
+/inmtto
 # Executables
 *.swf
 *.air
